@@ -1,0 +1,99 @@
+/*
+* Styles
+*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: var(--bkg-color);
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+/* Focus style for accessibility */
+:focus-visible {
+  outline: 2px dotted var(--text-color);
+  outline-offset: 0.2rem;
+}
+
+/* prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    -webkit-animation-delay: -1ms !important;
+            animation-delay: -1ms !important;
+    -webkit-animation-duration: 1ms !important;
+            animation-duration: 1ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    -webkit-transition-duration: 0s !important;
+            transition-duration: 0s !important;
+    -webkit-transition-delay: 0s !important;
+            transition-delay: 0s !important;
+  }
+}
+.c-container {
+  max-width: 140rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 3.2rem;
+}
+
+.c-logo {
+  max-width: 14rem;
+}
+
+.c-link {
+  color: var(--link-color);
+  display: inline-block;
+  position: relative;
+  text-decoration: underline;
+}
+.c-link:focus, .c-link:hover {
+  text-decoration: none;
+  color: var(--link-color-hover);
+}
+
+.c-header__content {
+  position: relative;
+}
+.c-header__content p {
+  font-size: 1.6rem;
+}
+
+.c-landing {
+  color: var(--text-color);
+}
+
+.c-landing__header p {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-left: 1.6rem;
+  line-height: 1;
+}
+
+.c-landing__logo {
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  opacity: 0.2;
+  position: fixed;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(2);
+          transform: translate(-50%, -50%) scale(2);
+}
+
+.c-landing__title {
+  text-align: left;
+  color: var(--text-color);
+  font-size: 3.2em;
+  line-height: 1;
+  max-width: 90rem;
+}
+.c-landing__title span {
+  display: block;
+}

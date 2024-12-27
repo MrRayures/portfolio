@@ -1,0 +1,119 @@
+<!doctype html> 
+<html lang="fr">
+<head>
+	<meta charset="utf-8"> 
+  <title>MrRayures Aka François Leproust - Portfolio</title> 
+  <meta name="color-scheme" content="dark light">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="MrRayures aka Francois Leproust développeur Front End freelance depuis 2007">
+	
+  <!--
+	<link rel="stylesheet" href="assets/css/dark.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="assets/css/light.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+  -->
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+
+
+
+</head>
+
+<body class="" data-theme="">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
+
+  <header class="c-header" role="banner">
+    <div class="c-container">
+      <div class="c-header__content">
+        <img class="c-logo" src="assets/img/logo_mr-rayures.png" alt="Logo Mister Rayures">
+        <p>Aka François Leproust</p>
+        <button type="button" class="btn-toggle">Mode dark / light</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="c-container">
+    <div class="c-landing">
+      <h1 class="c-landing__title">Développeur Front End freelance depuis 2007, je construis avec mes clients des architectures HTML/CSS modernes, performantes et dans une certaine mesure accessibles.</h1>
+      <h2 id="projets">Sélection de projets :</h2>
+      <ul class="c-list">
+        <li class="c-list__item">
+          <a class="c-link" href="https://www.cora.fr/">Cora Drive</a>
+          <p>Gestion et mise en place de l'architecture html/css en tant que lead. Intégration avec VueJS et Stoyrbook.</p>
+        </li>
+        <li>
+          <a class="c-link" href="https://www.zago-store.com/">Zago</a>
+          <p>Architecture html/css et intégration sur Magento 2</p>
+        </li>
+        <li>
+          <a class="c-link" href="https://bonjourlebon.fr/">Bonjour Le Bon</a>
+          <p>Architecture html/css et accompagnement</p>
+        </li>
+        <li>
+          <a class="c-link" href="https://www.go-sport.com/">Go Sport</a>
+          <p>Optimisation des performances (images / CSS / Fonts)</p>
+        </li>
+        <li>
+          <a class="c-link" href="https://olivierbalez.com/">Olivier Balez</a>
+          <p>Accompagnement et création d'un thème wordpress personnalisé</p>
+        </li>
+        <li>
+          <a class="c-link" href="https://occasions.decathlon.fr/">Decathlon occasions</a>
+          <p>Architecture html/css</p>
+        </li>Z
+      </ul>
+      
+
+      <h2 id="contact">Me contacter</h2>
+      <a class="c-link" href="mailto:hello@mr-rayures.com">hello@mr-rayures.com</a>
+      
+      <img class="c-landing__logo" src="assets/img/logo_mr-rayures.png" alt="">
+    </div>
+  </div>
+  
+  <footer class="c-footer">
+    <p>Francois Leproust is MrRayures | Thème sombre basé sur <a href="https://draculatheme.com/" target="_blank" title="Lien externe">Dracula PRO</a> ❤️</p>
+  </footer>
+	
+</body>
+<script>
+
+  const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+
+  const btn = document.querySelector(".btn-toggle");
+
+  const currentTheme = localStorage.getItem("theme");
+  //console.log('Locastorage: ' + currentTheme);
+
+  
+  if(currentTheme) {
+    document.body.classList.add(currentTheme+'-mode');
+    document.body.setAttribute('data-theme', currentTheme);
+  } else {
+    if (userPrefersDark) {
+      document.body.classList.add("dark-mode");
+      document.body.setAttribute('data-theme', 'dark');
+    }
+    if (userPrefersLight) {
+      document.body.classList.add("light-mode");
+      document.body.setAttribute('data-theme', 'light');
+    }
+  }
+
+  function toggleDarkLight() {
+    var currentClass = document.body.className;
+    document.body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+    document.body.setAttribute('data-theme', currentClass == "dark-mode" ? "light" : "dark");
+    localStorage.setItem("theme", currentClass == "dark-mode" ? "light" : "dark");
+  }
+
+  // Listen for a click on the button 
+  btn.addEventListener("click", function() {
+    toggleDarkLight()
+  });
+
+
+</script>
+</html>

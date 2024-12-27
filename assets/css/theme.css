@@ -1,0 +1,40 @@
+/*
+* Dark theme based on Dracula theme by Zeno Rocha
+* https://draculatheme.com/
+*/
+:root {
+  --background:#282a36;
+  --currentLine:#44475a;
+  --foreground:#f8f8f2;
+  --comment:#6272a4;
+  --cyan:#8be9fd;
+  --green:#50fa7b;
+  --orange:#ffb86c;
+  --pink:#ff79c6;
+  --purple:#bd93f9;
+  --red:#ff5555;
+  --yellow:#f1fa8c;
+}
+
+body {
+  --text-color: var(--background);
+  --link-color: var(--pink);
+  --link-color-hover: var(--green);
+  --bkg-color: #FFFFFF;
+}
+
+body.dark-mode {
+  --text-color: #FFFFFF;
+  --link-color: var(--green);
+  --link-color-hover: var(--pink);
+  --bkg-color: var(--background);
+}
+
+[data-theme=light] .c-logo {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+[data-theme=light] .c-landing__logo {
+  -webkit-filter: invert(1) blur(10px);
+          filter: invert(1) blur(10px);
+}
